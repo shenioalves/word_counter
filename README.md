@@ -10,6 +10,7 @@ Este é um aplicativo Flutter que permite ao usuário **selecionar um arquivo `.
 <div align="center">
     <img src="assets/readme/demo.gif" alt="demo" height="425">
 </div>
+<hr/>
 ---
 ## 💡 O que torna este contador especial?
 
