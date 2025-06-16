@@ -16,7 +16,7 @@ Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
 ✅ Na vertical (de cima para baixo)  
 ✅ Na diagonal (↘️ e outras direções)  
 ✅ Escrita ao contrário (ex: `XMAS` encontra `SAMX`)  
-✅ Mesmo quando **sobreposta** a outras palavras no texto (como em grades de letras)
+✅ Mesmo quando **sobreposta** a outras palavras no texto
 
 ## 🚀 Funcionalidades
 
@@ -29,4 +29,4 @@ Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
 
 ## Getting Started
 
-- git clone https://github.com/shenioalves/word_count
+- git clone https://github.com/shenioalves/word_counter
