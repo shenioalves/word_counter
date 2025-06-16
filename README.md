@@ -10,6 +10,7 @@ Este é um aplicativo Flutter que permite ao usuário **selecionar um arquivo `.
 <div align="center">
     <img src="assets/readme/demo.gif" alt="demo" height="425">
 </div>
+---
 ## 💡 O que torna este contador especial?
 
 Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
@@ -19,6 +20,7 @@ Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
 ✅ Na diagonal (↘️ e outras direções)  
 ✅ Escrita ao contrário (ex: `XMAS` encontra `SAMX`)  
 ✅ Mesmo quando **sobreposta** a outras palavras no texto
+
 
 ## 🚀 Funcionalidades
 
