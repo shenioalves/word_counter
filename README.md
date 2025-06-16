@@ -6,6 +6,8 @@ Este é um aplicativo Flutter que permite ao usuário **selecionar um arquivo `.
 
 ---
 
+## Demonstração
+![Demonstração do Contador de Palavras](assets/readme/demo.gif)
 ## 💡 O que torna este contador especial?
 
 Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
