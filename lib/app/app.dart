@@ -1,5 +1,7 @@
-import 'package:desafio_tecnico/app/features/home/view/home_view.dart';
+
 import 'package:flutter/material.dart';
+
+import 'features/home/view/home_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

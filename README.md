@@ -1,16 +1,30 @@
-# Word Count
+# 📊 Contador de Palavras
 
-A new Flutter project.
+## 🧩 Descrição do Projeto
+
+Este é um aplicativo Flutter que permite ao usuário **selecionar um arquivo `.txt`**, digitar uma palavra e **contar automaticamente quantas vezes essa palavra aparece** no conteúdo do arquivo.
+
+---
+
+## 💡 O que torna este contador especial?
+
+Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
+
+✅ Na horizontal (esquerda → direita)  
+✅ Na vertical (de cima para baixo)  
+✅ Na diagonal (↘️ e outras direções)  
+✅ Escrita ao contrário (ex: `XMAS` encontra `SAMX`)  
+✅ Mesmo quando **sobreposta** a outras palavras no texto (como em grades de letras)
+
+## 🚀 Funcionalidades
+
+- Upload de arquivos `.txt`.
+- Campo de entrada para palavra.
+- Botão para iniciar a contagem.
+- Exibição do resultado em tempo real.
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- git clone https://github.com/shenioalves/word_count
