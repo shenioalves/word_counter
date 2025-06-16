@@ -27,4 +27,4 @@ Este não é um simples "buscar e contar". Ele é capaz de encontrar a palavra:
 
 ## Getting Started
 
-- git clone https://github.com/shenioalves/word_count
+- git clone https://github.com/shenioalves/word_counter
