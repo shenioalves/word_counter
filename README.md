@@ -8,7 +8,7 @@ Este é um aplicativo Flutter que permite ao usuário **selecionar um arquivo `.
 
 ## 🎬 Demonstração
 <div align="center">
-    <img src="assets/readme/demo.gif" alt="demo" height="425">
+    <img src="assets/readme/dem0.gif" alt="demo" height="425">
 </div>
 
 ---
