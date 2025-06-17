@@ -16,6 +16,7 @@ class FileUploadWidget extends StatelessWidget {
       valueListenable: selectedFileNotifier,
       builder: (context, selectedFile, child) {
         return Column(
+          spacing: 10,
           children: [
             InkWell(
               onTap: onPickFile,
@@ -33,6 +34,7 @@ class FileUploadWidget extends StatelessWidget {
                     const Icon(Icons.file_upload_outlined, size: 40),
                     Text(
                       selectedFile ?? 'Selecionar arquivo',
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ],
                 ),
@@ -41,9 +43,9 @@ class FileUploadWidget extends StatelessWidget {
             if (selectedFile != null)
               Text(
                 'Arquivo $selectedFile selecionado!',
-                style: const TextStyle(
-                  fontStyle: FontStyle.italic,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontStyle: FontStyle.italic),
               ),
           ],
         );

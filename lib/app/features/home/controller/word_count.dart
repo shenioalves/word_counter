@@ -1,10 +1,10 @@
-int countWord(List<List<String>> matriz, String word) {
-  final int row = matriz.length;
-  final int column = matriz[0].length;
+int countWord(List<List<String>> matrix, String word) {
+  final int row = matrix.length;
+  final int column = matrix[0].length;
   final wordLength = word.length;
   int count = 0;
   // Se a palavra for vazia ou a matriz estiver vazia, retorna 0
-  if (word.isEmpty || matriz.isEmpty || matriz[0].isEmpty) {
+  if (word.isEmpty || matrix.isEmpty || matrix[0].isEmpty) {
     return 0;
   }
 
@@ -19,7 +19,7 @@ int countWord(List<List<String>> matriz, String word) {
   for (int i = 0; i < row; i++) {
     for (int j = 0; j < column; j++) {
       // verifica se é a primeira letra da palavra
-      if (matriz[i][j] == word[0]) {
+      if (matrix[i][j] == word[0]) {
         // verifica todas as direcoess possiveis
         for (final direction in directions) {
           final dirRow = direction[0];
@@ -32,13 +32,13 @@ int countWord(List<List<String>> matriz, String word) {
             final newCol = j + k * dirCol;
 
             // verifica se esta dentro dos limites da matriz
-            if (newRow < 0 || newCol < 0 || newRow >= matriz.length || newCol >= matriz[newRow].length) {
+            if (newRow < 0 || newCol < 0 || newRow >= matrix.length || newCol >= matrix[newRow].length) {
               match = false;
               break;
             }
 
             // verifica se a letra corresponde
-            if (matriz[newRow][newCol] != word[k]) {
+            if (matrix[newRow][newCol] != word[k]) {
               match = false;
               break;
             }

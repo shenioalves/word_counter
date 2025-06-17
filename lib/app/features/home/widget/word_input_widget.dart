@@ -24,10 +24,7 @@ class WordInputWidget extends StatelessWidget {
       textCapitalization: TextCapitalization.characters,
       decoration: InputDecoration(
         labelText: 'Qual palavra você quer contar?',
-        labelStyle: TextStyle(
-          fontSize: 14,
-          color: Colors.black,
-        ),
+        labelStyle: Theme.of(context).textTheme.titleSmall,
         border: OutlineInputBorder(),
         focusedBorder: OutlineInputBorder(),
         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),

@@ -18,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   final ValueNotifier<bool> isProcessingNotifier = ValueNotifier(false);
   final ValueNotifier<int?> countNotifier = ValueNotifier(null);
   final ValueNotifier<String?> selectedFileNotifier = ValueNotifier(null);
-  final ValueNotifier<List<List<String>>> matrizNotifier = ValueNotifier([]);
+  final ValueNotifier<List<List<String>>> matrixNotifier = ValueNotifier([]);
 
   final _formKey = GlobalKey<FormState>();
   final TextEditingController wordController = TextEditingController();
@@ -29,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
     isProcessingNotifier.dispose();
     countNotifier.dispose();
     selectedFileNotifier.dispose();
-    matrizNotifier.dispose();
+    matrixNotifier.dispose();
     wordController.dispose();
     _wordFocusNode.dispose();
     super.dispose();
@@ -37,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
 
   Future<void> _wordCount() async {
     if (!_formKey.currentState!.validate()) return;
-    if (matrizNotifier.value.isEmpty) {
+    if (matrixNotifier.value.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Por favor, selecione um arquivo primeiro'),
@@ -50,7 +50,7 @@ class _HomeViewState extends State<HomeView> {
 
     try {
       final word = wordController.text.trim().toUpperCase();
-      final result = countWord(matrizNotifier.value, word);
+      final result = countWord(matrixNotifier.value, word);
 
       countNotifier.value = result;
     } catch (e) {
@@ -73,17 +73,38 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Future<void> _pickFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
-    if (result != null) {
-      final file = File(result.files.single.path!);
-      final lines = await file.readAsLines();
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['txt'],
+        allowMultiple: false,
+        dialogTitle: 'Selecione um arquivo de texto',
+      );
 
-      matrizNotifier.value = lines
-          .map((line) => line.toUpperCase().split(''))
-          .toList();
-      selectedFileNotifier.value = result.files.single.name;
+      if (result != null) {
+        final path = result.files.single.path;
 
-      countNotifier.value = null;
+        if (path == null || !path.endsWith('.txt')) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Por favor, selecione um arquivo .txt válido'),
+            ),
+          );
+          return;
+        }
+
+        final file = File(path);
+        final lines = await file.readAsLines();
+
+        matrixNotifier.value = lines
+            .map((line) => line.toUpperCase().split(''))
+            .toList();
+        selectedFileNotifier.value = result.files.single.name;
+
+        countNotifier.value = null;
+      }
+    } catch (e) {
+      debugPrint('Erro ao ler o arquivo: ${e.toString()}');
     }
   }
 
@@ -91,9 +112,11 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Contador de palavras',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: Theme.of(
+            context,
+          ).textTheme.headlineSmall?.copyWith(color: Colors.white),
         ),
         backgroundColor: Colors.blue,
       ),
